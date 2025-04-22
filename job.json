@@ -1,0 +1,38 @@
+{
+    "taskGroups": [
+        {
+            "taskSpec": {
+                "runnables": [
+                    {
+                        "container": {
+                            "imageUri": "gcr.io/project-55302-456910/batch-pyspark"
+                        },
+                        "environment": {
+                            "variables": {
+                                "SECRET": "passw0rd"
+                            }
+                        }
+                    }
+                ],
+                "computeResource": {
+                    "cpuMilli": 1000,
+                    "memoryMib": 256
+                }
+            },
+            "taskCount": 2,
+            "parallelism": 2
+        }
+    ],
+    "allocationPolicy": {
+        "instances": [
+            {
+                "policy": {
+                    "machineType": "e2-standard-4"
+                }
+            }
+        ]
+    },
+    "logsPolicy": {
+        "destination": "CLOUD_LOGGING"
+    }
+}

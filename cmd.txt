@@ -1,0 +1,16 @@
+docker build -t gcr.io/{YOUR_PROJECT_ID}/batch-pyspark .
+docker push gcr.io/{YOUR_PROJECT_ID}/batch-pyspark
+
+gcloud config  set project {YOUR_PROJECT_ID}
+
+docker build -t gcr.io/project-55302-456910/batch-pyspark .
+docker push gcr.io/project-55302-456910/batch-pyspark
+
+gcloud config  set project project-55302-456910
+
+gcloud batch jobs submit {JOB_NAME} \
+  --project {YOUR_PROJECT_ID} \
+  --location {LOCATION} \
+  --config job.json
+
+docker run -it gcr.io/project-55302-456910/batch-pyspark /bin/bash
