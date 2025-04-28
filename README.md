@@ -32,12 +32,13 @@ gcloud batch jobs submit <JOB_NAME> \
 Dockerfile
 The Dockerfile sets up the environment with:
 
-Ubuntu 22.04 as the base image
-OpenJDK 17 for Spark
-Python 3.10 and required dependencies
-Apache Spark 3.5.5
-main.py
-The main script performs the following:
+ - Ubuntu 22.04 as the base image
+ - OpenJDK 17 for Spark
+ - Python 3.10 and required dependencies
+ - Apache Spark 3.5.5
+ - main.py
+
+## The main script performs the following:
 
 Loads sample sales data using PySpark.
 Adds an alphanumeric ID to each row.
